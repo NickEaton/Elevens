@@ -23,16 +23,16 @@ public class Deck {
 	
 	//Generic 52 size deck constructor
 	public Deck() {
-		size = 52;
-		String[] rn = {"Clubs", "Spades", "Hearts", "Diamonds"};
-		String[] sp = {"Jack", "Queen", "King"};
+		this.size = 52;
+		String[] rn = {"clubs", "spades", "hearts", "diamonds"};
+		String[] sp = {"jack", "queen", "king"};
 		for(int i = 0; i<4; i++) {
 			for(int j = 1; j<14; j++) {
 				if(j>10) {
-					deck.add(new Card(sp[j-11], rn[i], 10));
+					deck.add(new Card(sp[j-11], rn[i], 0));
 				}
 				else if(j==1) {
-					deck.add(new Card("Ace", rn[i], 1));
+					deck.add(new Card("ace", rn[i], 1));
 				}
 				else {
 					deck.add(new Card(""+j, rn[i], j));
@@ -56,7 +56,7 @@ public class Deck {
 	
 	//returns if the deck "contains" any more cards
 	public boolean isEmpty() {
-		return size==0;
+		return size == 0;
 	}
 	
 	//returns the current value of size
